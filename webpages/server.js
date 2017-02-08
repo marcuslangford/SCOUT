@@ -1,9 +1,13 @@
-var http = require('http');
-var server = http.createServer(
-    function (request, response) {
-        // respond to the request
-        response.setHeader("Content-Type", "text/plain");
-        response.end('Hello World at ' + request.url + '\n');
-    }
-);
-server.listen(8080); 
+var express = require('express')
+var app = express()
+
+app.use(express.static('www'));
+
+var server = app.listen(8000, function () {
+
+    var host = server.address().address
+    var port = server.address().port
+
+    console.log('Express app listening at http://%s:%s', host, port)
+
+})
