@@ -1,14 +1,9 @@
-var http = require('http'),
-    fs = require('fs');
-
-
-fs.readFile('./index.html', function (err, html) {
-    if (err) {
-        throw err; 
-    }       
-    http.createServer(function(request, response) {  
-        response.writeHeader(200, {"Content-Type": "text/html"});  
-        response.write(html);  
-        response.end();  
-    }).listen(8000);
-});
+var http = require('http');
+var server = http.createServer(
+    function (request, response) {
+        // respond to the request
+        response.setHeader("Content-Type", "text/plain");
+        response.end('Hello World at ' + request.url + '\n');
+    }
+);
+server.listen(8080); 
