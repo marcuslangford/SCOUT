@@ -1,7 +1,7 @@
 var express = require('express')
 var app = express()
 
-app.use(express.static('www'));
+app.use('/', express.static('webpages', { extensions: ['html'] }));
 
 var server = app.listen(8080, function () {
 
