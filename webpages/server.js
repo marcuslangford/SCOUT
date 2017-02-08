@@ -1,6 +1,10 @@
-var express = require('express');
-var app = express();
 
-app.use('/', express.static('webpages', { extensions: ['html'] }));
-
-app.listen(8080);
+var http = require('http');
+var server = http.createServer(
+    function (request, response) {
+        // respond to the request
+        response.setHeader("Content-Type", "text/plain");
+        response.end('Hello World at ' + request.url + '\n');
+    }
+);
+server.listen(8080);  // node never stops, mostly waits
