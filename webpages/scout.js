@@ -7,6 +7,7 @@ document.getElementById('login').onclick = function(){
     var pass = document.getElementById('password');
     
     if(user.value == users[0] && pass == passwords[0]){
+        alert("well done");
         
 }
 
