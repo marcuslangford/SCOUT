@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Scout -- Edit My Profile</title>
+    <link href="mainstyle.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <div id="topNavigationBar">
+      <ul>
+        <li><a href="myHome.html">My Home</a></li>
+        <li><a href="scout.html"><img id="smallLogo" src="scout.png" alt="logo of scout website."></a></li>
+        <li><a href="myAccount.html">My Account</a></li>
+      </ul>
+    </div>
+
+    <div id="pageHeader">
+      <h2>Edit My Profile</h2>
+    </div>
+
+    <form action="action_page.php">
+      <div class="container">
+        <div id="profileForm">
+          <!--Name-->
+          <input type="text" placeholder="Full Name" name="fullName" required>
+          <!--Location-->
+          <input type="text" placeholder="Location" name="location" required>
+          <!--Course-->
+          <input type="text" placeholder="Course" name="course" required>
+          <!--Year of Study-->
+          <input type="text" placeholder="Year of Study" name="yearOfStudy" required>
+          <!--Gender-->
+          <form>
+            <label><b>Gender<b></label>
+            <br>
+            <input type="radio" name="gender" value="male">Male
+            <input type="radio" name="gender" value="female">Female
+          </form>
+          <button id="save" type="submit">Save</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

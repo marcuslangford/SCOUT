@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Scout -- Searching Preferences</title>
+    <link href="mainstyle.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <div id="topNavigationBar">
+      <ul>
+        <li><a href="myHome.html">My Home</a></li>
+        <li><a href="scout.html"><img id="smallLogo" src="scout.png" alt="logo of scout website."></a></li>
+        <li><a href="myAccount.html">My Account</a></li>
+      </ul>
+    </div>
+
+    <div id="pageHeader">
+      <h2>Searching Preferences</h2>
+    </div>
+
+    <form action="action_page.php">
+      <div class="container">
+        <div id="searchForm">
+          <!--Location-->
+          <input type="text" placeholder="Location" name="location" required>
+          <!--Course-->
+          <input type="text" placeholder="Course" name="course" required>
+          <!--Year of Study-->
+          <input type="text" placeholder="Year of Study" name="yearOfStudy" required>
+          <!--Gender-->
+          <form>
+            <label><b>Gender<b></label>
+            <br>
+            <input type="radio" name="gender" value="male">Male
+            <input type="radio" name="gender" value="female">Female
+            <input type="radio" name="gender" value="any">Any
+          </form>
+          <!--Tidiness-->
+          <form>
+            <label><b>Tidiness<b></label>
+            <br>
+            <input type="radio" name="tidiness" value="messy">Messy
+            <input type="radio" name="tidiness" value="tidy">Tidy
+            <input type="radio" name="tidiness" value="cleanFreak">Clean Freak
+          </form>
+          <!--Hobbies and Interests-->
+          <input type="text" placeholder="Hobbies and Interests" name="hobbies" required>
+          <!--First Language-->
+          <input type="text" placeholder="First Language" name="firstLanguage" required>
+          <p><a href="searchResult.html">Search</a></p>
+          <!--<button id="save" type="submit">Search</button>-->
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
