@@ -1,4 +1,3 @@
-
 var users = ['marcus'];
 var passwords = ['up'];
 
@@ -10,7 +9,3 @@ document.getElementById('login').onclick = function(){
         alert("well done");
         
 }
-
-
-
-
