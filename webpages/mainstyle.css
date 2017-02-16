@@ -105,6 +105,11 @@ form a{
   padding: 20px;
   font-size: 25px;
 }
+
+#middleNavigationBar a{
+  text-decoration: none;
+  color: black;
+}
 /* End of Middle Navigation Bar */
 /*---------End of Home Page----------*/
 
