@@ -73,6 +73,33 @@ form a{
 #smallLogo{
   width: 60px;
 }
+#accountLogo{
+	width: 60px;
+}
+#homeLogo{
+	width: 50px;
+}
+.logo-line{
+	position: relative;
+	text-align: center;
+}
+
+/* Joined both selectors, since were pretty much the same */
+.logo-line::before,
+.logo-line::after {       
+    min-width: 25%;
+    height: 11px;
+	
+    border-top: 1px solid #ccc; 
+	
+    display: inline-block;
+    content: '';
+
+    padding-top: 0.5em; 
+  
+    margin-left: 5%; 
+    margin-right: 5%;
+}
 /*** End of Top Navigation Bar ***/
 
 /*** Other content in this page ***/
