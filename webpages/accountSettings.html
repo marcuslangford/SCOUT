@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Scout -- My Account Settings</title>
+    <link href="mainstyle.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    
+    <script>
+    
+        $(document).ready(function(){
+        $( "#resetLink" ).dialog({ autoOpen: false });
+        $( "#passReset" ).click(function() {
+        $( "#resetLink" ).dialog("open" );
+            });
+        });
+        
+        $(document).ready(function(){
+        $( "#deleteLink" ).dialog({ autoOpen: false });
+        $( "#accountDelete" ).click(function() {
+        $( "#deleteLink" ).dialog( "open" );
+            });
+        });
+    </script>
+  </head>
+
+  <body>
+    <div id="topNavigationBar">
+      <ul>
+        <li><a href="myHome.html">My Home</a></li>
+        <li><a href="scout.html"><img id="smallLogo" src="scout.png" alt="logo of scout website."></a></li>
+        <li>My Account</li>
+      </ul>
+    </div>
+
+    <div id="personalInfo">
+      <div class="profilePic">
+        <img src="defaultPic.png" alt="default picture of user.">
+      </div>
+      
+    </div>
+
+    <div id="accountSetting">
+      <ul>
+        <button id="passReset">Change/forgot my password</button>
+        <div id="resetLink"><p>
+        You will receive an email with a password reset link.</p></div>
+
+        <button id="accountDelete">Delete my Scout account</button>
+        <div id="deleteLink"><p>
+        You will receive a confirmation email with an account deletion link.</p></div>
+      </ul>
+    </div>
+  </body>
+</html>
