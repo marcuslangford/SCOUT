@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Scout</title>
+    <link href="mainstyle.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <div id="topNavigationBar">
+      <ul>
+        <li><a href="myHome.html">My Home</a></li>
+        <li><a href="scout.html"><img id="smallLogo" src="scout.png" alt="logo of scout website."></a></li>
+        <li><a href="myAccount.html">My Account</a></li>
+      </ul>
+    </div>
+
+    <div id="personalInfo">
+      <div id="detail">
+        <p id="name">Bob Mortimer</p>
+        <p id="location">Portsmouth, GB</p>
+        <p id="gender">Male</p>
+        <p id="course">Computer Science</p>
+      </div>
+    </div>
+
+    <div id="contact">
+      <p><b>Email address</b>: bobMortimer@myport.ac.uk</p>
+      <p><b>Send a message</b></p>
+      <form name="contactByEmail" method="post" action="form-to-email.php">
+        <p>
+          <!--You name-->
+          <label for="name">Fullname</label><br>
+          <input type="text" name="name" placeholder="Enter your fullname." required>
+        </p>
+        <br>
+        <p>
+          <!--Your email-->
+          <label for="email">Your Email</label><br>
+          <input type="text" name="yourEmail" placeholder="Enter your email." required>
+        </p>
+        <br>
+        <p>
+          <!--Email to send to-->
+          <label for="email">Housemate's Email (You can find it above)</label><br>
+          <input type="text" name="senderEmail" placeholder="Enter your email." required>
+        </p>
+        <br>
+        <br>
+        <p>
+        <!--Message-->
+        <label for="name">Message</label><br>
+        <textarea type="text" style="width: 100%" name="message" placeholder="Please enter your message." required></textarea>
+        </p>
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    <div id="back">
+      <p><a href="bobMortimer.html">Back</a></p>
+    </div>
+
+
+  </body>
+</html>
