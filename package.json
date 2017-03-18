@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/marcuslangford/SCOUT#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "bluebird": "^3.5.0",
+    "express": "^4.15.2",
+    "mysql": "^2.13.0",
+    "sqlite": "^2.3.0",
   }
 }
