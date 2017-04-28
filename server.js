@@ -7,6 +7,7 @@ var fs = require("fs");
 var file = "test.db";
 var exists = fs.existsSync(file);
 
+//Initialising the database
 var config = require('./sql_config.json');
 var sql = mysql.createConnection(config.mysql);
 var sqlite3 = require("sqlite3").verbose();
@@ -16,7 +17,7 @@ var db = new sqlite3.Database(file);
 // Define the port to run on
 app.set('port', 8080);
 
-
+//Use express to load the html webpages
 app.use('/', express.static('webpages', { extensions: ['html'] }));
 
 db.serialize(function () {
