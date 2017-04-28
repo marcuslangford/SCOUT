@@ -1,3 +1,3 @@
 # SCOUT
 
-This github project is intended to be the final submission for our second year Introduction to Software Engineering group coursework. 
+This github project is intended to be the final submission for our second year Introduction to Software Engineering group coursework. The goal of the website is to allow students looking for housing to find and communicate with other potential housemates. To do this the student should be able to create an account, which will include their important details and a small biography. They should then be able to search for other housemates by filtering through the other users using their important details, such as location and course. Finally, they can then match and communicate with the people they are interested in.
