@@ -16,6 +16,7 @@
       border: 1px solid black;
       box-sizing: border-box;
     }
+    /**A red outline will appear on the border of the insert space if the university email entered is invalid.**/
     input[aria-invalid="true"], textarea[aria-invalid="true"]{
 		    border:5px solid #f00;
 		    box-shadow:0 0 4px 0 #f00;
@@ -50,6 +51,7 @@
         <!--Username and Password-->
         <label><b>Email</b></label>
         <br>
+	<!--Restrict the email using the pattern below-->
         <input name="email" id="email" value=""
 					required="required" aria-required="true"
 					pattern="[Uu][Pp][0-9]{6}@(myport.ac.uk)"
@@ -65,7 +67,6 @@
 
         <input id="submitButton" type="submit" name="Submit" value="Login">
 
-      </div>
     </form>
 
     <!--Javascript for auto validation for email-->
