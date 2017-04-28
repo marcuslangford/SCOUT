@@ -2,50 +2,32 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var mysql = require('mysql');
-var fs = require("fs");
-var file = "test.db";
-var exists = fs.existsSync(file);
+var sqlite3 = require('sqlite3').verbose();
+
 
 //Initialising the database
-var config = require('./sql_config.json');
-var sql = mysql.createConnection(config.mysql);
-var sqlite3 = require("sqlite3").verbose();
-var db = new sqlite3.Database(file);
+var db = new sqlite3.Database('toDoDB');
+db.run("create table if not exists toDoList (id INTEGER PRIMARY KEY AUTOINCREMENT, email STRING,password STRING)");
 
+function updateDB(req, res) {
+    var data = []
+    var paramaters = req.params.email+req.params.password
+    var email = paramaters.substring(0, 21);
+    var password = paramaters.substring(21,paramaters.length)
+    db.run("INSERT INTO toDoList (email, password) VALUES (?,?)", [email,password]);
+    res.sendStatus(200);
+
+    db.each("SELECT id,email,password from toDoList", function (err,row) {
+      data.push(row.id,row.email,row.password);
+    }, function () {
+    console.log(data);
+  });
+}
 
 // Define the port to run on
 app.set('port', 8080);
 
 //Use express to load the html webpages
 app.use('/', express.static('webpages', { extensions: ['html'] }));
-
-db.serialize(function () {
-  if(!exists){
-  db.run("CREATE TABLE Test (name,username,password)");
-  }
-});
-
-db.serialize(function () {
-
-  db.run("INSERT INTO Test VALUES (?, ?, ?)", ['a1', 'b1', 'c1']);
-  db.run("INSERT INTO Test VALUES (?, ?, ?)", ['a2', 'b2', 'c2']);
-  db.run("INSERT INTO Test VALUES (?, ?, ?)", ['a3', 'b3', 'c3']);
-});
-
-db.serialize(function () {
-  db.each("SELECT * FROM Test", function (err, row) {
-    console.log(row);
-  });
-});
-
-
-db.close();
-
-// Listen for requests
-var server = app.listen(app.get('port'), function() {
-  var port = server.address().port;
-  console.log('Server running on port ' + port);
-});
-
-
+app.post('/scout/create/:email:password', updateDB);
+app.listen(8080);
