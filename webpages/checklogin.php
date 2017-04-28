@@ -2,7 +2,7 @@
 if(!isset($_POST['submit']))
 {
   //Need to submit the form
-  header('Location: myHome.html');
+  header("Location: myHome.html");
 }
 
 ?>
