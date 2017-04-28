@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-
+    <title>Scout</title>
     <link href="mainstyle.css" rel="stylesheet" type="text/css">
   </head>
 
@@ -16,6 +16,7 @@
       border: 1px solid black;
       box-sizing: border-box;
     }
+    /**When an invalid email address is inserted, a red outline is created to indicate this is invalid**/
     input[aria-invalid="true"], textarea[aria-invalid="true"]{
 		    border:5px solid #f00;
 		    box-shadow:0 0 4px 0 #f00;
@@ -47,6 +48,7 @@
         <!--Username and Password-->
         <label><b>Email</b></label>
         <br>
+	<!--Restrict the user email using pattern-->
         <input name="email" id="email" value=""
 					required="required" aria-required="true"
 					pattern="[Uu][Pp][0-9]{6}@(myport.ac.uk)"
